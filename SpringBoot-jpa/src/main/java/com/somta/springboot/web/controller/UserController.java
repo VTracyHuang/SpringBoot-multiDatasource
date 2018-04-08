@@ -3,18 +3,18 @@ package com.somta.springboot.web.controller;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.somta.springboot.pojo.User;
+import com.somta.springboot.repository.UserRepository;
 
 @RestController
 public class UserController {
 
-	@GetMapping("/getString")
-    public String getString() {
-        return "Hello 张三";
-    }
+	@Autowired
+	private UserRepository userRepository;
 	
 	@GetMapping("/queryUserById")
 	public User queryUserById() {
