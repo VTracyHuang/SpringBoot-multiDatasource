@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.somta.springboot.pojo.User;
@@ -16,7 +18,8 @@ public class UserController {
         return "Hello 张三";
     }
 	
-	@GetMapping("/queryUserById")
+	//@GetMapping("/queryUserById")
+	@RequestMapping(value = "/queryUserById",method=RequestMethod.GET)
 	public User queryUserById() {
 		User user = new User();
 		user.setId("123456");

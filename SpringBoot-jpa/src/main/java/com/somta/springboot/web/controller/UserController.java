@@ -19,7 +19,7 @@ public class UserController {
 	@GetMapping("/queryUserById")
 	public User queryUserById() {
 		User user = new User();
-		user.setId("123456");
+		//user.setId("123456");
 		user.setName("张三");
 		user.setAge(12);
         return user;
@@ -29,7 +29,7 @@ public class UserController {
 	public List<User> queryUserList() {
 		List<User> list = new ArrayList<>();
 		
-		User user = new User();
+		/*User user = new User();
 		user.setId("123456");
 		user.setName("张三");
 		user.setAge(12);
@@ -37,10 +37,10 @@ public class UserController {
 		User user2 = new User();
 		user2.setId("789");
 		user2.setName("李四");
-		user2.setAge(22);
+		user2.setAge(22);*/
 		
-		list.add(user);
-		list.add(user2);
+		/*list.add(user);
+		list.add(user2);*/
         return list;
     }
 	
