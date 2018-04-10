@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 import com.somta.springboot.pojo.User;
 
 @Repository
-public interface UserRepository  extends JpaRepository<User, String>{
+public interface UserRepository  extends JpaRepository<User, Long>{
 
 	/**
 	 * 根据年纪查询用户
