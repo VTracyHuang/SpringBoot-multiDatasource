@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.somta.springboot.dao.UserDao" > 
+<!-- Result Map-->
+<resultMap id="BaseResultMap" type="com.somta.springboot.pojo.User" >
+	<result column="id" property="id"/>
+	<result column="name" property="name"/>
+	<result column="age" property="age"/>
+</resultMap>
+       
+<!-- th_role_user table all fields -->
+<sql id="Base_Column_List" >
+	id, name, nick_name, age
+</sql>
+   
+<insert id="addUser" parameterType="com.somta.springboot.pojo.User" >
+	insert into t_user (id, name, age) 
+	values (#{id},#{name},#{age});
+</insert>
+
+<update id="updateUserById" parameterType="com.somta.springboot.pojo.User" >
+	update fw_account set 
+	<trim  suffixOverrides="," >
+	<if test="id != null and id != ''">
+		id=#{id},
+	</if>
+	<if test="name != null and name != ''">
+		name=#{name},
+	</if>
+	<if test="age != null and age != ''">
+		age=#{age},
+	</if>
+	</trim> where id=#{id}
+</update>
+
+<select id="queryUserById" resultMap="BaseResultMap" parameterType="java.lang.String">
+	select <include refid="Base_Column_List" /> 
+	from t_user where id = #{id}
+</select>
+
+<select id="queryUserList" resultMap="BaseResultMap" parameterType="java.lang.String">
+	select <include refid="Base_Column_List" /> 
+	from t_user
+</select>
+
+</mapper>   

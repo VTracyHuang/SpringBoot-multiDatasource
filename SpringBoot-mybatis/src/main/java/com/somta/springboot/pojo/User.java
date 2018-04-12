@@ -2,17 +2,17 @@ package com.somta.springboot.pojo;
 
 public class User {
 
-	private String id;
+	private Long id;
 	
 	private String name;//姓名
 	
 	private Integer age;//年龄
 
-	public String getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(String id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 
