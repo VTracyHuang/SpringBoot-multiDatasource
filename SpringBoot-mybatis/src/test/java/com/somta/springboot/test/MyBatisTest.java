@@ -24,7 +24,7 @@ import com.somta.springboot.pojo.User;
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringBootTest(classes = Application.class)
-public class JpaTest {
+public class MyBatisTest {
 
 	
 	@Autowired
@@ -37,65 +37,54 @@ public class JpaTest {
 	@Test
 	public void testAddUser() throws Exception {
 		User user = new User();
-		user.setId(888L);
+		user.setId(889L);
 		user.setName("zhangsan");
 		user.setAge(12);
 		userDao.addUser(user);
 	}
 	
 	/**
-	 * 删除用户(根据对象删除时，必须要有ID属性)
+	 * 删除用户
 	 * @throws Exception
 	 */
-	/*@Test
+	@Test
 	public void testDelUser() throws Exception {
-		User user = new User();
-		user.setId(1L);
-		user.setName("zhangsan");
-		user.setAge(12);
-		userRepository.delete(user);
-	}*/
+		userDao.deleteUserById(889L);
+	}
 	
-	 
 	/**
 	 * 修改用户信息
 	 * @throws Exception
 	 */
-	/*@Test
+	@Test
 	public void testUpdUser() throws Exception {
 		User user = new User();
 		user.setId(2L);
-		user.setName("zhangsan11");
+		user.setName("zhangsan99");
 		user.setAge(122);
-		userRepository.save(user);
-	}*/
+		userDao.updateUserById(user);
+	}
 	
 	/**
 	 * 查询用户
 	 * @throws Exception
 	 */
-	/*@Test
+	@Test
 	public void testQueryUser() throws Exception {
-		User user = userRepository.findByAge(22);
+		User user = userDao.queryUserById(2L);
 		System.out.println(user.getName());
-		
-		User user2 = userRepository.findByNameAndAge("lishi", 22);
-		System.out.println(user2.getName());
-		
-		User user3 = userRepository.findUser("zhangsan11");
-		System.out.println(user3.getName());
-	}*/
+	}
 	
 	/**
 	 * 查询所有用户
 	 * @throws Exception
 	 */
-	/*@Test
+	@Test
 	public void testQueryUserList() throws Exception {
-		List<User> list = userRepository.findAll();
+		List<User> list = userDao.queryUserList();
 		for (User user : list) {
 			System.out.println(user.getName());
 		}
-	}*/
+	}
 	
 }

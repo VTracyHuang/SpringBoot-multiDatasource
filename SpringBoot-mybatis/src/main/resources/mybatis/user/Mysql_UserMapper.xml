@@ -12,7 +12,7 @@
        
 <!-- th_role_user table all fields -->
 <sql id="Base_Column_List" >
-	id, name, nick_name, age
+	id, name, age
 </sql>
    
 <insert id="addUser" parameterType="com.somta.springboot.pojo.User" >
@@ -20,8 +20,12 @@
 	values (#{id},#{name},#{age});
 </insert>
 
+<delete id="deleteUserById" parameterType="java.lang.Long">
+ delete from t_user where id=#{id}
+</delete>
+
 <update id="updateUserById" parameterType="com.somta.springboot.pojo.User" >
-	update fw_account set 
+	update t_user set 
 	<trim  suffixOverrides="," >
 	<if test="id != null and id != ''">
 		id=#{id},
@@ -35,12 +39,12 @@
 	</trim> where id=#{id}
 </update>
 
-<select id="queryUserById" resultMap="BaseResultMap" parameterType="java.lang.String">
+<select id="queryUserById" resultMap="BaseResultMap" parameterType="java.lang.Long">
 	select <include refid="Base_Column_List" /> 
 	from t_user where id = #{id}
 </select>
 
-<select id="queryUserList" resultMap="BaseResultMap" parameterType="java.lang.String">
+<select id="queryUserList" resultMap="BaseResultMap">
 	select <include refid="Base_Column_List" /> 
 	from t_user
 </select>
