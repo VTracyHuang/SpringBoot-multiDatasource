@@ -1,13 +1,13 @@
 package com.somta.springboot.test;
 
-import java.util.List;
-
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import com.github.pagehelper.Page;
+import com.github.pagehelper.PageHelper;
 import com.somta.springboot.Application;
 import com.somta.springboot.dao.UserDao;
 import com.somta.springboot.pojo.User;
@@ -81,8 +81,12 @@ public class MyBatisTest {
 	 */
 	@Test
 	public void testQueryUserList() throws Exception {
-		List<User> list = userDao.queryUserList();
-		for (User user : list) {
+		int pageNum=1;
+		int pageSize=10;
+		Page<User> page = PageHelper.startPage(pageNum, pageSize);
+		userDao.queryUserList();
+		System.out.println("总共条数："+page.getTotal());
+		for (User user : page.getResult()) {
 			System.out.println(user.getName());
 		}
 	}
