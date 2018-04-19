@@ -1,10 +1,10 @@
-package com.somta.springboot.dao.master;
+package com.somta.springboot.dao;
 
 import java.util.List;
 
 import com.somta.springboot.pojo.User;
 
-public interface UserMasterDao {
+public interface UserDao {
 
 	int addUser(User user);
 	
@@ -12,7 +12,7 @@ public interface UserMasterDao {
 	
 	int updateUserById(User user);
 
-	User queryUserById(Long id);
+	User queryUserById(Long id); 
 	
 	List<User> queryUserList();
 }
