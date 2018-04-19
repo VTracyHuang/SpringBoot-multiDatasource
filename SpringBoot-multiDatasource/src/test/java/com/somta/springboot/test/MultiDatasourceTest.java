@@ -8,6 +8,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.somta.springboot.Application;
 import com.somta.springboot.dao.master.UserMasterDao;
+import com.somta.springboot.dao.slaver.UserSlaverDao;
 import com.somta.springboot.pojo.User;
 
 
@@ -29,7 +30,7 @@ public class MultiDatasourceTest {
 	private UserMasterDao masterUserDao;
 	
 	@Autowired
-	private UserMasterDao slaverUserDao;
+	private UserSlaverDao slaverUserDao;
 
 	
 	/**

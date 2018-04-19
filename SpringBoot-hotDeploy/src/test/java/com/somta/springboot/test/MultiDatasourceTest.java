@@ -7,7 +7,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.somta.springboot.Application;
-import com.somta.springboot.dao.master.UserMasterDao;
+import com.somta.springboot.dao.UserDao;
 import com.somta.springboot.pojo.User;
 
 
@@ -26,11 +26,8 @@ public class MultiDatasourceTest {
 
 	
 	@Autowired
-	private UserMasterDao masterUserDao;
+	private UserDao userDao;
 	
-	@Autowired
-	private UserMasterDao slaverUserDao;
-
 	
 	/**
 	 * 查询用户
@@ -38,11 +35,9 @@ public class MultiDatasourceTest {
 	 */
 	@Test
 	public void testQueryUser() throws Exception {
-		User masterUser = masterUserDao.queryUserById(1L);
-		System.out.println("masterUser==>"+masterUser.getName());
+		User user = userDao.queryUserById(1L);
+		System.out.println("user==>"+user.getName());
 		
-		User slaverUser = slaverUserDao.queryUserById(1L);
-		System.out.println("slaverUser==>"+slaverUser.getName());
 	}
 	
 	
