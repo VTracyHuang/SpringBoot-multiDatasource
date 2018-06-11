@@ -18,6 +18,17 @@
   
   <dependencies>
   
+  	<dependency>
+       <groupId>org.springframework.boot</groupId>
+       <artifactId>spring-boot-starter</artifactId>
+       <exclusions>
+		<exclusion>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-logging</artifactId>
+		</exclusion>
+	   </exclusions>
+    </dependency>
+  
     <!-- 单元测试依赖 start -->
   	<dependency>
 		<groupId>org.springframework.boot</groupId>
@@ -29,6 +40,13 @@
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-web</artifactId>
     </dependency>
+    
+    <!-- log4j2 start 在spring-boot-starter忽略本身日志 -->
+	<dependency>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-log4j2</artifactId>
+	</dependency>
+	<!-- log4j2 end -->
     
     <dependency>
 	    <groupId>org.mybatis.spring.boot</groupId>
