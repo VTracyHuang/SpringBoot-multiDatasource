@@ -6,4 +6,4 @@ spring:
     password: 123456     
     
 logging:
-  config: classpath:log4j2-prod.xml 
+  config: classpath:log4j2-prod.xml

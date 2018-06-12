@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<configuration>
-	 <Appenders>
-	 
+<configuration status="ERROR" monitorInterval="30">
+	
+     <Appenders>
 	    <Console name="Console" target="SYSTEM_OUT">
 	      <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n"/>
 	    </Console>
@@ -10,8 +10,8 @@
         <!-- fileName定义输出文件名称（当前文件） -->
         <!-- filePattern定义输出文件名称（文件满足条件后自动截断，生成历史文件） -->
         <RollingFile name="DEBUG_ROLLING_FILE"
-                     fileName="/usr/local/emdoor/logs/emdoor-mdm/logs.log"
-                     filePattern="/usr/local/emdoor/logs/emdoor-mdm/$${date:yyyy-MM}/app-%d{MM-dd-yyyy}-%i.log.gz">
+                     fileName="D:/logs/emdoor-mdm/logs.log"
+                     filePattern="D:/logs/emdoor-mdm/$${date:yyyy-MM}/app-%d{MM-dd-yyyy}-%i.log.gz">
             <PatternLayout>
                 <Pattern>%d [%t] %-5p [%c] - %m%n  </Pattern>
             </PatternLayout>
@@ -22,10 +22,10 @@
             </Policies>
         </RollingFile>
         
-        <!-- 同一来源的Appender可以定义多个 -->
+        <!-- 定义ERROR的Appender -->
         <RollingFile name="ERROR_ROLLING_FILE"
-                     fileName="/usr/local/emdoor/logs/emdoor-mdm/error-logs.log"
-                     filePattern="/usr/local/emdoor/logs/emdoor-mdm/%d{yyyy-MM-dd}-error.log">
+                     fileName="D:/logs/emdoor-mdm/error-logs.log"
+                     filePattern="D:/logs/emdoor-mdm/%d{yyyy-MM-dd}-error.log">
             <!-- 可以通过该参数来设置获取日志的权限 -->
             <ThresholdFilter level="ERROR"/>
             <PatternLayout>
@@ -45,4 +45,5 @@
           <AppenderRef ref="ERROR_ROLLING_FILE"/>
 	    </Root>
 	 </Loggers>
+	 
 </configuration>
