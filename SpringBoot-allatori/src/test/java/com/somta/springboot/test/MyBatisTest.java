@@ -1,3 +1,4 @@
+/*
 package com.somta.springboot.test;
 
 import java.util.List;
@@ -13,6 +14,7 @@ import com.somta.springboot.dao.UserDao;
 import com.somta.springboot.pojo.User;
 
 
+*/
 /**
  * 
  * @author 明天的地平线
@@ -21,7 +23,8 @@ import com.somta.springboot.pojo.User;
  * SpringBoot 1.5.9  改用@SpringBootTest(classes = Application.class)
  * 
  *
- */
+ *//*
+
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringBootTest(classes = Application.class)
 public class MyBatisTest {
@@ -30,10 +33,12 @@ public class MyBatisTest {
 	@Autowired
 	private UserDao userDao;
 	
-	/**
+	*/
+/**
 	 * 新增用户
 	 * @throws Exception
-	 */
+	 *//*
+
 	@Test
 	public void testAddUser() throws Exception {
 		User user = new User();
@@ -43,19 +48,23 @@ public class MyBatisTest {
 		userDao.addUser(user);
 	}
 	
-	/**
+	*/
+/**
 	 * 删除用户
 	 * @throws Exception
-	 */
+	 *//*
+
 	@Test
 	public void testDelUser() throws Exception {
 		userDao.deleteUserById(889L);
 	}
 	
-	/**
+	*/
+/**
 	 * 修改用户信息
 	 * @throws Exception
-	 */
+	 *//*
+
 	@Test
 	public void testUpdUser() throws Exception {
 		User user = new User();
@@ -65,20 +74,24 @@ public class MyBatisTest {
 		userDao.updateUserById(user);
 	}
 	
-	/**
+	*/
+/**
 	 * 查询用户
 	 * @throws Exception
-	 */
+	 *//*
+
 	@Test
 	public void testQueryUser() throws Exception {
 		User user = userDao.queryUserById(2L);
 		System.out.println(user.getName());
 	}
 	
-	/**
+	*/
+/**
 	 * 查询所有用户
 	 * @throws Exception
-	 */
+	 *//*
+
 	@Test
 	public void testQueryUserList() throws Exception {
 		List<User> list = userDao.queryUserList();
@@ -88,3 +101,4 @@ public class MyBatisTest {
 	}
 	
 }
+*/
