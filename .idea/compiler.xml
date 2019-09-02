@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="SpringBoot-allatori" />
+        <module name="SpringBoot-jwt" />
+        <module name="SpringBoot-log4j2" />
+        <module name="SpringBoot-logback" />
+        <module name="SpringBoot-proguard" />
+        <module name="SpringBoot-prometheus" />
+        <module name="SpringBoot-staticResource" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="SpringBoot-allatori" target="1.8" />
+      <module name="SpringBoot-jwt" target="1.8" />
+      <module name="SpringBoot-log4j2" target="1.8" />
+      <module name="SpringBoot-logback" target="1.8" />
+      <module name="SpringBoot-proguard" target="1.8" />
+      <module name="SpringBoot-prometheus" target="1.8" />
+      <module name="SpringBoot-staticResource" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
