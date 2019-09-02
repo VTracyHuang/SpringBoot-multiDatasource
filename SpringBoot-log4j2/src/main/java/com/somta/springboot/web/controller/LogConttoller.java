@@ -9,7 +9,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/pub")
 public class LogConttoller {
-	
+
+    // Logger和LogManager导入的是org.slf4j包
 	private static final Logger logger = LogManager.getLogger(LogConttoller.class);
    
 	@GetMapping("/getLog")
