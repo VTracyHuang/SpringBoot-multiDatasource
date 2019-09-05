@@ -6,4 +6,4 @@ spring:
     password: 123456
    
 log:
-  path: D:/nmyslog/nmys            
+  path: D:/logs

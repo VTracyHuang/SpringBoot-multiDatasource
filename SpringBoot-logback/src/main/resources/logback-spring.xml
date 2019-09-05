@@ -166,12 +166,12 @@
 
     <!--开发环境:打印控制台-->
     <springProfile name="dev">
-        <logger name="com.somta.springboot" level="debug"/>
+        <logger name="com.somta.springboot" level="DEBUG"/>
     </springProfile>
 
 	<!--测试环境:输出到文件-->
     <springProfile name="test">
-        <root level="debug">
+        <root level="DEBUG">
             <appender-ref ref="CONSOLE" />
             <appender-ref ref="DEBUG_FILE" />
             <appender-ref ref="INFO_FILE" />
@@ -182,7 +182,7 @@
 
     <!--生产环境:输出到文件-->
     <springProfile name="prod">
-        <root level="info">
+        <root level="WARN">
             <appender-ref ref="DEBUG_FILE" />
             <appender-ref ref="ERROR_FILE" />
             <appender-ref ref="WARN_FILE" />
