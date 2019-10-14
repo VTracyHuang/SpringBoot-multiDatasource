@@ -39,6 +39,8 @@ public class RedisTest {
         user.setName("明天的地平线");
         user.setAge(18);
         redisUtil.set("user",user);
+        User u = (User) redisUtil.get("user");
+        System.out.println(u.getName());
         System.out.println(redisUtil.get("user"));
     }
 

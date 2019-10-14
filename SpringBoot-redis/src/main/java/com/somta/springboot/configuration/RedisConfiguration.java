@@ -74,16 +74,16 @@ public class RedisConfiguration {
         om.setVisibility(PropertyAccessor.ALL, JsonAutoDetect.Visibility.ANY);
         om.enableDefaultTyping(ObjectMapper.DefaultTyping.NON_FINAL);
         StringRedisSerializer stringRedisSerializer = new StringRedisSerializer();
-        Jackson2JsonRedisSerializer jackson2JsonRedisSerializer = new Jackson2JsonRedisSerializer(Object.class);
+        GenericJackson2JsonRedisSerializer genericJackson2JsonRedisSerializer = new GenericJackson2JsonRedisSerializer();
         //redisTemplate.setDefaultSerializer(jackson2JsonRedisSerializer);
         //key采用String的序列化方式
         redisTemplate.setKeySerializer(stringRedisSerializer);
         // hash的key也采用String的序列化方式
         redisTemplate.setHashKeySerializer(stringRedisSerializer);
         //设置value的序列化器采用jackson
-        redisTemplate.setValueSerializer(jackson2JsonRedisSerializer);
+        redisTemplate.setValueSerializer(genericJackson2JsonRedisSerializer);
         //设置hash value的序列化器采用jackson
-        redisTemplate.setHashValueSerializer(jackson2JsonRedisSerializer);
+        redisTemplate.setHashValueSerializer(genericJackson2JsonRedisSerializer);
         return redisTemplate;
     }
 
